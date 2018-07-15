@@ -75,7 +75,7 @@ class SteamApi
     public function getUserID() {
         if($this->openId->validate()) {
             $id = $this->openId->identity;
-            $ptn = "/^http:\/\/steamcommunity\.com\/openid\/id\/(7[0-9]{15,25}+)$/";
+            $ptn = "/^https?:\/\/steamcommunity\.com\/openid\/id\/(7[0-9]{15,25}+)$/";
             preg_match($ptn, $id, $matches);
 
             $data['steam_id'] = $matches[1];
